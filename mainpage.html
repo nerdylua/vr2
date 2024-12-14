@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="check1.css">
+    <script src="https://kit.fontawesome.com/your-latest-kit.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('images/background.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .button-container a {
+            text-decoration: none;
+        }
+        button {
+            background-color: #ffd700;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4b0082;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        button i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #ffd700;
+            transform: scale(1.1);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .button-container button {
+                width: 200px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>VR TOURISM</h1>
+    <div class="button-container">
+        <a href="videopage.html#urban">
+            <button aria-label="Urban Destinations">
+                <i class="fas fa-city" aria-hidden="true"></i>
+                <span>Urban</span>
+            </button>
+        </a>
+        <a href="videopage.html#historical">
+            <button aria-label="Historical Sites">
+                <i class="fas fa-landmark" aria-hidden="true"></i>
+                <span>Historical</span>
+            </button>
+        </a>
+        <a href="videopage.html#7wonders">
+            <button aria-label="Seven Wonders">
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                <span>7 Wonders</span>
+            </button>
+        </a>
+        <a href="videopage.html#beaches">
+            <button aria-label="Beach Destinations">
+                <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+                <span>Beaches</span>
+            </button>
+        </a>
+        <a href="videopage.html#monuments">
+            <button aria-label="World Monuments">
+                <i class="fas fa-monument" aria-hidden="true"></i>
+                <span>Monuments</span>
+            </button>
+        </a>
+        <a href="videopage.html#premium">
+            <button aria-label="Premium Experiences">
+                <i class="fas fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </button>
+        </a>
+    </div>
+</body>
+</html>

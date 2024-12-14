@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Tourism - 360° Experience</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="vr-page-container">
+        <h1>Explore the World in 360°</h1>
+        <div id="vr-container">
+            <div id="error-message" class="hidden">
+                <p>Oops! Unable to load the selected destination. Please try again.</p>
+                <a href="index.html" class="back-btn">Return to Categories</a>
+            </div>
+            <a-scene>
+                <a-assets>
+                    <video id="tourism-video" crossorigin="anonymous" autoplay loop="true" playsinline></video>
+                </a-assets>
+                <a-videosphere src="#tourism-video" rotation="0 -90 0"></a-videosphere>
+                <a-entity camera look-controls position="0 1.6 0"></a-entity>
+            </a-scene>
+        </div>
+    </div>
+
+    <script>
+        // Define video sources with more specific paths
+        const videoSources = {
+            urban: 'assets/urban.mp4',
+            historical: 'assets/History.mp4',
+            '7wonders': 'assets/7wonder.mp4',
+            beaches: 'assets/example.mp4',
+            monuments: 'assets/example.mp4',
+            premium: 'assets/pre.mp4'
+        };
+
+        // Get the video element and error message container
+        const videoElement = document.getElementById('tourism-video');
+        const errorMessage = document.getElementById('error-message');
+
+        // Get the current hash from the URL
+        const currentHash = window.location.hash.substring(1);
+
+        // Function to handle video loading and errors
+        function loadVideo(source) {
+            videoElement.src = source;
+            videoElement.addEventListener('error', () => {
+                errorMessage.classList.remove('hidden');
+                videoElement.style.display = 'none';
+            });
+        }
+
+        // Set the video source based on the hash
+        if (videoSources[currentHash]) {
+            loadVideo(videoSources[currentHash]);
+        } else {
+            // Default video source if hash is not recognized
+            loadVideo('assets/example.mp4');
+        }
+    </script>
+</body>
+</html>
